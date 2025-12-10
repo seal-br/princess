@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dose de Fofura!</title>
+    <style>
+        /* Stili CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* Azzurro chiaro per un tocco di 'fofura' */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 500px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        /* Stili per la Pagina 1 (Iniziale) */
+        #page-1 h1 {
+            color: #ff69b4; /* Rosa caldo */
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+        #start-button {
+            background-color: #ffd700; /* Giallo oro */
+            color: #333;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        #start-button:hover {
+            background-color: #ffc700;
+            transform: scale(1.02);
+        }
+
+        #start-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Stili per la Pagina 2 (Gatto) */
+        #page-2 {
+            display: none; /* Inizialmente nascosta */
+        }
+
+        #cat-photo {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 5px solid #ff69b4;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        #page-2 p {
+            font-size: 1.2em;
+            color: #8a2be2; /* Blu-viola per la dedica */
+            font-weight: 500;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="page-1">
+            <h1>Você está pronto(a) para a dose de fofura de hoje?</h1>
+            <button id="start-button">Aperte aqui!</button>
+        </div>
+
+        <div id="page-2">
+            <img id="cat-photo" src="placeholder.jpg" alt="Foto de um Gato">
+            <p>Esta dose de fofura é dedicada a você, que merece toda a alegria que um gatinho pode oferecer! ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        // Logica JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            const startButton = document.getElementById('start-button');
+            const page1 = document.getElementById('page-1');
+            const page2 = document.getElementById('page-2');
+            const container = document.querySelector('.container');
+
+            startButton.addEventListener('click', () => {
+                // Nasconde la Pagina 1 e mostra la Pagina 2 con una transizione fluida
+                
+                // Opacità a 0 per farla "scomparire"
+                container.style.opacity = '0';
+                container.style.transform = 'scale(0.95)';
+
+                setTimeout(() => {
+                    // Sostituisce i contenuti dopo l'animazione di scomparsa
+                    page1.style.display = 'none';
+                    page2.style.display = 'block';
+
+                    // Fa "riapparire" il contenitore con la Pagina 2
+                    container.style.opacity = '1';
+                    container.style.transform = 'scale(1)';
+                    container.style.backgroundColor = '#fff0f5'; // Cambio di colore di sfondo del contenitore per la Pagina 2
+                }, 500); // 500ms corrisponde alla durata della transizione CSS
+            });
+        });
+    </script>
+
+</body>
+</html>
