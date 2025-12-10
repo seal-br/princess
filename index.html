@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dose de Fofura!</title>
+    <title>Um Sorriso para Você</title>
     <style>
         /* Stili CSS */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff; /* Azzurro chiaro per un tocco di 'fofura' */
-            color: #333;
+            font-family: 'Georgia', serif;
+            background-color: #fce4ec; /* Rosa molto chiaro */
+            color: #4a148c; /* Viola scuro */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,103 +22,148 @@
         .container {
             background-color: #ffffff;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             max-width: 90%;
-            width: 500px;
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            width: 550px;
+            min-height: 200px; /* Altezza minima per la coerenza */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        /* Stili per la Pagina 1 (Iniziale) */
-        #page-1 h1 {
-            color: #ff69b4; /* Rosa caldo */
-            font-size: 1.8em;
+        /* Stili dei Testi */
+        .screen h1, .screen p {
             margin-bottom: 30px;
+            font-weight: 600;
         }
 
-        #start-button {
-            background-color: #ffd700; /* Giallo oro */
-            color: #333;
+        #screen-1 h1 {
+            color: #e91e63; /* Rosa acceso */
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        #screen-2 p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            color: #6a1b9a; /* Viola medio */
+            font-style: italic;
+        }
+
+        #screen-3 h1 {
+            color: #880e4f; /* Viola scuro */
+            font-size: 1.5em;
+            margin-bottom: 25px;
+        }
+
+        /* Stili del Bottone */
+        .next-button {
+            background-color: #ff4081; /* Bottone Rosa */
+            color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.1em;
+            padding: 15px 35px;
+            font-size: 1.2em;
             font-weight: bold;
-            border-radius: 8px;
+            border-radius: 50px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.1s;
+            transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 15px; /* Spazio dal testo */
         }
 
-        #start-button:hover {
-            background-color: #ffc700;
-            transform: scale(1.02);
+        .next-button:hover {
+            background-color: #f50057;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
 
-        #start-button:active {
-            transform: scale(0.98);
+        .next-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        /* Stili per la Pagina 2 (Gatto) */
-        #page-2 {
-            display: none; /* Inizialmente nascosta */
-        }
-
+        /* Stili per l'Immagine del Gatto */
         #cat-photo {
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
             height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 5px solid #ff69b4;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            margin-top: 10px;
+            border: 5px solid #ffab40; /* Bordo Arancione/Giallo */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
-        #page-2 p {
-            font-size: 1.2em;
-            color: #8a2be2; /* Blu-viola per la dedica */
-            font-weight: 500;
-            line-height: 1.5;
+        /* Nasconde le schermate non attive */
+        .screen {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .screen.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div id="page-1">
-            <h1>Você está pronto(a) para a dose de fofura de hoje?</h1>
-            <button id="start-button">Aperte aqui!</button>
+        <div id="screen-1" class="screen active">
+            <h1>Olá Princesa</h1>
+            <button id="button-1" class="next-button">Comece Aqui</button>
         </div>
 
-        <div id="page-2">
-            <img id="cat-photo" src="placeholder.jpg" alt="Foto de um Gato">
-            <p>Esta dose de fofura é dedicada a você, que merece toda a alegria que um gatinho pode oferecer! ❤️</p>
+        <div id="screen-2" class="screen">
+            <p>Eu sei que hoje foi um dia horrível. Eu amo rir com você e, quando preciso, amo chorar com você. É uma honra compartilhar alegrias e tristezas, ansiedades e sonhos ao seu lado.</p>
+            <button id="button-2" class="next-button">Me Mostre o Sorriso</button>
         </div>
+
+        <div id="screen-3" class="screen">
+            <h1>Espero que Aumma te arranque um sorriso, veja como ele está gordo</h1>
+            <img id="cat-photo" src="placeholder.jpg" alt="Foto de um Gato gordo">
+            </div>
     </div>
 
     <script>
-        // Logica JavaScript
+        // Logica JavaScript per la sequenza delle schermate
         document.addEventListener('DOMContentLoaded', () => {
-            const startButton = document.getElementById('start-button');
-            const page1 = document.getElementById('page-1');
-            const page2 = document.getElementById('page-2');
-            const container = document.querySelector('.container');
+            const screen1 = document.getElementById('screen-1');
+            const screen2 = document.getElementById('screen-2');
+            const screen3 = document.getElementById('screen-3');
 
-            startButton.addEventListener('click', () => {
-                // Nasconde la Pagina 1 e mostra la Pagina 2 con una transizione fluida
-                
-                // Opacità a 0 per farla "scomparire"
-                container.style.opacity = '0';
-                container.style.transform = 'scale(0.95)';
+            const button1 = document.getElementById('button-1');
+            const button2 = document.getElementById('button-2');
+
+            // Funzione per la transizione tra le schermate
+            function transitionTo(currentScreen, nextScreen) {
+                // Dissolvenza della schermata corrente
+                currentScreen.style.opacity = '0';
 
                 setTimeout(() => {
-                    // Sostituisce i contenuti dopo l'animazione di scomparsa
-                    page1.style.display = 'none';
-                    page2.style.display = 'block';
+                    // Nasconde la schermata corrente e mostra la successiva
+                    currentScreen.classList.remove('active');
+                    nextScreen.classList.add('active');
 
-                    // Fa "riapparire" il contenitore con la Pagina 2
-                    container.style.opacity = '1';
-                    container.style.transform = 'scale(1)';
-                    container.style.backgroundColor = '#fff0f5'; // Cambio di colore di sfondo del contenitore per la Pagina 2
+                    // Garantisce che la nuova schermata abbia opacità 1
+                    nextScreen.style.opacity = '1';
                 }, 500); // 500ms corrisponde alla durata della transizione CSS
+            }
+
+            // Click dal Tasto 1 (Schermata 1 -> Schermata 2)
+            button1.addEventListener('click', () => {
+                transitionTo(screen1, screen2);
+            });
+
+            // Click dal Tasto 2 (Schermata 2 -> Schermata 3)
+            button2.addEventListener('click', () => {
+                transitionTo(screen2, screen3);
+                
+                // Opzionale: Cambia il colore di sfondo del corpo per la schermata finale
+                document.body.style.backgroundColor = '#fff0f5'; 
             });
         });
     </script>
